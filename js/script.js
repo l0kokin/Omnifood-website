@@ -18,6 +18,7 @@ yearEl.textContent = currentYear;
 /////////////////////////////
 // Smooth scrolling
 const allLinks = document.querySelectorAll("a:link");
+
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -32,11 +33,11 @@ allLinks.forEach(function (link) {
 
     // Scroll to other links
     if (href !== "#" && href.startsWith("#")) {
-      const sectionEl = document.querySelectorAll(href);
-      sectionEl.scrollIntoView({ behavior: smooth });
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: "smooth" });
     }
 
-    // Close mobile navigation
+    // Close mobile naviagtion
     if (link.classList.contains("main-nav-link"))
       header.classList.toggle("nav-open");
   });
